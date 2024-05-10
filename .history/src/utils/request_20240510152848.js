@@ -56,26 +56,25 @@ service.interceptors.response.use(
     }
   },
   (error) => {
-    error
-    // console.log('请求异常：', error)
-    // const { msg } = error.response.data
-    // // 未认证
-    // if (error.response.status === 401) {
-    //   handleError()
-    // } else {
-    //   ElMessage({
-    //     message: '网络异常，请稍后再试!',
-    //     type: 'error',
-    //     duration: 5 * 1000
-    //   })
-    //   return Promise.reject(new Error(msg || 'Error'))
-    // }
+    console.log('请求异常：', error)
+    const { msg } = error.response.data
+    // 未认证
+    if (error.response.status === 401) {
+      handleError()
+    } else {
+      ElMessage({
+        message: '网络异常，请稍后再试!',
+        type: 'error',
+        duration: 5 * 1000
+      })
+      return Promise.reject(new Error(msg || 'Error'))
+    }
   }
 )
 
 // 统一处理请求响应异常
 function handleError() {
-  const { isLogin, logout } = stores.user.useUserStore()
+  const { isLogin, logout } = store.user.useUserStore()
   if (isLogin) {
     ElMessageBox.confirm('您的登录账号已失效，请重新登录', {
       confirmButtonText: '再次登录',

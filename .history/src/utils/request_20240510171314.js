@@ -56,7 +56,6 @@ service.interceptors.response.use(
     }
   },
   (error) => {
-    error
     // console.log('请求异常：', error)
     // const { msg } = error.response.data
     // // 未认证
