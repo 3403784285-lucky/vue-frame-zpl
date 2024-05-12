@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 export const constantRoutes = [
   // {
   //   path: '/',
-  //   component: () => import('@/views/dashboard/IndexBasic.vue')
+  //   component: () => import('@/views/dashboard/index.vue'),
   // },
   {
     path: '/login',

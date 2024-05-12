@@ -2,10 +2,10 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 本地静态路由
 export const constantRoutes = [
-  // {
-  //   path: '/',
-  //   component: () => import('@/views/dashboard/IndexBasic.vue')
-  // },
+  {
+    path: '/',
+    component: () => import('@/views/dashboard/IndexBasic.vue')
+  },
   {
     path: '/login',
     component: () => import('@/views/login/IndexBasic.vue'),
